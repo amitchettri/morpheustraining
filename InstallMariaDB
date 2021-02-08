@@ -9,12 +9,6 @@ do
         sleep 60
 done
 
-#Install apache, start service and enable on boot
-sudo apt-get install apache2 -y
-sudo systemctl stop apache2.service
-sudo systemctl start apache2.service
-sudo systemctl enable apache2.service
-
 #Install MariaDB, start service and enable on boot
 sudo apt-get install mariadb-server mariadb-client -y
 sudo systemctl stop mariadb.service
