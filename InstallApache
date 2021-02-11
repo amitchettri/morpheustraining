@@ -4,6 +4,8 @@ then
         sleep 120
 fi
 
+sudo apt-get update
+
 #Install apache, start service and enable on boot
 sudo apt-get install apache2 -y
 sudo systemctl stop apache2.service
