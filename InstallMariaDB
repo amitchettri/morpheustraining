@@ -4,10 +4,12 @@ DBUSER="<%=customOptions.mysqldbuser%>"
 DBPASS="<%=customOptions.mysqldbpassword%>"
 
 #Wait until any apt-get processes have finished
-until [ `ps -ef | grep [a]pt-get | wc -l` = 0 ]
-do
+if [ `ps -ef | grep [a]pt-get | wc -l` != 0 ]
+then
         sleep 60
-done
+fi
+
+sudo apt-get update
 
 #Install MariaDB, start service and enable on boot
 sudo apt-get install mariadb-server mariadb-client -y
