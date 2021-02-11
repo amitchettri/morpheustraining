@@ -1,8 +1,8 @@
 #Wait until any apt-get processes have finished
-until [ `ps -ef | grep [a]pt-get | wc -l` = 0 ]
-do
-        sleep 60
-done
+if [ `ps -ef | grep [a]pt-get | wc -l` != 0 ]
+then
+        sleep 120
+fi
 
 #Install apache, start service and enable on boot
 sudo apt-get install apache2 -y
