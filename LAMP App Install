@@ -3,7 +3,7 @@ CIPASS="<%=cypher.read('secret/cloudinit')%>"
 MYSQL_HOST="<%=evars.LAMP_MYSQL_IP%>"
 IP="<%=server.internalIp%>"
 
-#Install Apache, MySQL and PHP
+#Install Apache and PHP
 sudo apt update -y
 sudo apt-get install sshpass -y
 sudo apt install apache2 -y
