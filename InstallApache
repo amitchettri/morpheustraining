@@ -1,0 +1,13 @@
+#Wait until any apt-get processes have finished
+if [ `ps -ef | grep [a]pt-get | wc -l` != 0 ]
+then
+        sleep 120
+fi
+
+sudo apt-get update
+
+#Install apache, start service and enable on boot
+sudo apt-get install apache2 -y
+sudo systemctl stop apache2.service
+sudo systemctl start apache2.service
+sudo systemctl enable apache2.service
